@@ -1,4 +1,5 @@
 package baitap;
+
 import java.util.Scanner;
 
 public class ClassBai3 {
@@ -45,7 +46,7 @@ public class ClassBai3 {
 		}
 	}
 
-	//phương thức đọc số 2 chữ số
+	// phương thức đọc số 2 chữ số
 	public String docSoHaiChuSo(int n) {
 		int a = n % 10;
 		int b = n / 10;
@@ -62,7 +63,7 @@ public class ClassBai3 {
 				return docSoMotChuSo(b) + " mươi";
 			} else if (a == 1) {
 				return docSoMotChuSo(b) + " mươi mốt";
-			} else if (a == 5){
+			} else if (a == 5) {
 				return docSoMotChuSo(b) + " mươi lăm";
 			} else {
 				return docSoMotChuSo(b) + " mươi " + docSoMotChuSo(a);
@@ -70,12 +71,12 @@ public class ClassBai3 {
 		}
 	}
 
-	//phương thức đọc số 3 chữ số
+	// phương thức đọc số 3 chữ số
 	public String docSoBaChuSo(int n) {
-		int a = n / 100;
-		int b = n % 100;
-		int c = b / 10;
-		int d = b % 10;
+		int a = n / 100;// chữ số hàng trăm
+		int b = n % 100;// hai chữ số: hàng chục + đơn vị
+		int c = b / 10;// chữ số hàng chục
+		int d = b % 10;// chữ số hàng đơn vị
 		if (c == 0) {
 			if (d == 0) {
 				return docSoMotChuSo(a) + " trăm";
@@ -83,20 +84,18 @@ public class ClassBai3 {
 				return docSoMotChuSo(a) + " trăm lẻ " + docSoMotChuSo(d);
 			}
 		} else {
-				return docSoMotChuSo(a) + " trăm " + docSoHaiChuSo(b);
+			return docSoMotChuSo(a) + " trăm " + docSoHaiChuSo(b);
 		}
 	}
 
 	public void xuLy() {
-		do {
-			int n = nhapN();
-			if (n >= 0 && n <= 9) {
-				System.out.println(docSoMotChuSo(n));
-			} else if (n >= 10 && n <= 99) {
-				System.out.println(docSoHaiChuSo(n));
-			} else {
-				System.out.println(docSoBaChuSo(n));
-			}
-		} while (true);
+		int n = nhapN();
+		if (n >= 0 && n <= 9) {
+			System.out.println(docSoMotChuSo(n));
+		} else if (n >= 10 && n <= 99) {
+			System.out.println(docSoHaiChuSo(n));
+		} else {
+			System.out.println(docSoBaChuSo(n));
+		}
 	}
 }

@@ -16,30 +16,30 @@ public class BaiTap5 {
 	}
 
 	public static void veHCN(int dai, int rong) {
-		// vẽ cạnh trên
+//		 vẽ cạnh trên
 		for (int i = 1; i < dai; i++) {
-			System.out.print("* ");
+			System.out.print("*");
 		}
+//		vẽ ngôi sao cuối cùng và xuống dòng
 		System.out.println("*");
 
-		// vẽ 2 cạnh bên
+//		 vẽ 2 cạnh bên
 		for (int i = 2; i < rong; i++) {
 			for (int j = 1; j <= dai; j++) {
 				if (j == 1) {
-					System.out.print("* ");
+					System.out.print("*");
 				} else if (j == dai) {
 					System.out.println("*");
 				} else {
-					System.out.print("  ");
+					System.out.print(" ");
 				}
 			}
 		}
 
 		// vẽ cạnh dưới
-		for (int i = 1; i < dai; i++) {
-			System.out.print("* ");
+		for (int i = 1; i <= dai; i++) {
+			System.out.print("*");
 		}
-		System.out.println("*");
 	}
 
 	public static void main(String[] args) {
