@@ -4,10 +4,6 @@ import java.util.Scanner;
 
 public class ClassBai3 {
 
-	public ClassBai3() {
-
-	}
-
 	public int nhapN() {
 		Scanner input = new Scanner(System.in);
 		int n;
