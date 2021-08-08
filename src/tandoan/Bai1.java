@@ -3,32 +3,45 @@ package tandoan;
 import java.util.Scanner;
 
 public class Bai1 {
+	private static int n;
+	
+	public int getN() {
+		return n;
+	}
+	public void setN(int n) {
+		this.n = n;
+	}
 	public static void dem(int n) {
-		int chiahet3 = 0;
-		int chiahet5 = 0;
-		for (int i = 0; i <= n; i++) {
-			if (i % 3 == 0) {
-				chiahet3++;
-
+		int chia3=0;
+		int chia5=0;
+		for (int i = 0; i < n; i++) {
+			if(n%5==0) {
+				chia5++;
 			}
-			if (i % 5 == 0) {
-				chiahet5++;
+			if(n%3==0) {
+				chia3++;
 			}
-
 		}
-		System.out.println("có " + chiahet3 + " số chia hết cho 3");
-		System.out.println("có " + chiahet5 + " số chia hết cho 5");
+		System.out.println("co: "+chia3+" so chia het cho 3");
+		System.out.println("co: "+chia5+ " so chia het cho 5");
 	}
-
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		int n;
+		Scanner sc =new Scanner(System.in);
+		boolean check;
 		do {
-			System.out.println("nhập n:");
-			n = input.nextInt();
-		} while (n < 10 || n > 100);
+			System.out.println("Nhap so n : ");
+			check=false;
+			try {
+				n= Integer.parseInt(sc.nextLine());
+			} catch (Exception e) {
+				System.out.println("Please n is number");
+				check=true;
+			}
+				
+			
+		} while ((n<10||n>100)&&check);
 		dem(n);
-
+		
+		
 	}
-
 }

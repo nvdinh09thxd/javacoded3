@@ -2,8 +2,7 @@ package tandoan;
 
 import java.util.Scanner;
 
-public class Bai3 {
-
+public class Bai31 {
 	public static String docHangDonVi(int n) {
 		switch (n) {
 		case 0:
@@ -33,7 +32,7 @@ public class Bai3 {
 	public static String docHangChuc(int n) {
 		switch (n) {
 		case 0:
-			return "lẻ";
+			return "linh";
 		case 1:
 			return "mười";
 		case 2:
@@ -83,55 +82,41 @@ public class Bai3 {
 	}
 
 	public static String readNumber(int n) {
-		if (n == 0) {
+		if (n == 0)
 			return "Không";
-		}
-
 		int du;
 
 		String s1 = "", s2 = "", s3 = "";
 		int dem = 0;
 		while (n != 0) {
 			du = n % 10;
-			if (dem == 0) {
+			if (dem == 0)
 				s1 = docHangDonVi(du);
-			} else if (dem == 1) {
+			else if (dem == 1)
 				s2 = docHangChuc(du);
-			} else
+			else
 				s3 = docHangTram(du);
 			n = n / 10;
 			dem++;
 		}
-		if (s1 == "" && s2 == "lẻ") {
+		if (s1 == "" && s2 == "linh")
 			s1 = s2 = "";
-		}
-		if (s2 != "" && s2 != "mười" && s1 == "một" && s3 != "" && s2 != "lẻ") {
-			s1 = "mốt";
-		}
-		if (s2 != "" && s1 == "năm" && s3 != "" && s2 != "lẻ") {
-			s1 = "lăm";
-		}
 		return (s3 + " " + s2 + " " + s1);
 	}
 
-	public static int inputNumber(int n) {
+	public static int inputNumber() {
 		Scanner sc = new Scanner(System.in);
+		int n;
 		do {
-			System.out.println("Input n :");
-			try {
-				n = Integer.parseInt(sc.nextLine());
-
-			} catch (NumberFormatException e) {
-				System.out.println("Please input is number!!!");
-//				e.printStackTrace();
-			}
+			System.out.println("Nhập n :");
+			n = sc.nextInt();
 		} while (n < 0 || n >= 1000);
 		return n;
 	}
 
 	public static void main(String[] args) {
-		int n = inputNumber(-1);
-		System.out.println("Số " + n + " đọc là: " + readNumber(n));
+		int n = inputNumber();
+		System.out.println(readNumber(n));
 	}
 
 }

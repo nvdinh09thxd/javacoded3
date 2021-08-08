@@ -25,7 +25,7 @@ public class BaiTap1 {
 		int n;
 		do {
 			System.out.println("Nhập n = ");
-			n = sc.nextInt();
+			n = Integer.parseInt(sc.nextLine());
 		} while (n > 100 || n < 10);
 		sc.close();
 		System.out.println("Trong khoảng từ 0 đến " + n + " có " + chiaHetCho5(n) + " số chia hết cho 5!");

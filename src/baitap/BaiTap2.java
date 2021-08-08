@@ -26,8 +26,7 @@ public class BaiTap2 {
 	}
 
 	public static void main(String[] args) {
-		int n;
-		n = nhapSo();
+		int n = nhapSo();
 		int number = taoSoNgauNhien();
 		System.out.println("Số ngẫu nhiên là: " + number);
 		soSanh2So(n, number);
